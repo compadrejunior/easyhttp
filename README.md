@@ -9,6 +9,7 @@ const http = new EasyHTTP();
 ```
 
 ## Calling GET method:
+Gets a resource by its corresponding URL.
 ```javascript 
 http.get(url)
 ```
@@ -26,12 +27,104 @@ It returs a promise object with *data* and *error* objects so you can call it as
  Example:
 
 ```javascript
- http.get(GETPOSTS)
+ http.get('https://jsonplaceholder.typicode.com/posts')
     .then(data => console.log(data))
     .catch(err => console.log(err));
 ```
 
+## Calling POST method:
+Adds a new resource by its corresponding URL.
+```javascript 
+http.post(url, data)
+```
+**URL:** 
 
+The resource to be called.
+
+**Data:**
+
+The data to be sent in JSON format.
+
+**Returns:** 
+
+It returs a promise object with *data* and *error* objects so you can call it asychronously. 
+
+* Data - the response data in JSON format. 
+* Error - any error message.
+
+ Example:
+
+```javascript
+ const data = {
+        title: document.getElementById('title').value,
+        body: document.getElementById('body').value
+    };
+
+ http.post('https://jsonplaceholder.typicode.com/posts', data)
+    .then(data => console.log(data))
+    .catch(err => console.log(err));
+```
+
+## Calling PUT method:
+Updates a resource by its corresponding URL.
+```javascript 
+http.put(url, data)
+```
+**URL:** 
+
+The resource to be called.
+
+**Data:**
+
+The data to be sent in JSON format.
+
+**Returns:** 
+
+It returs a promise object with *data* and *error* objects so you can call it asychronously. 
+
+* Data - the response data in JSON format. 
+* Error - any error message.
+
+ Example:
+
+```javascript
+ const data = {
+        title: document.getElementById('title').value,
+        body: document.getElementById('body').value
+    };
+
+ http.put('https://jsonplaceholder.typicode.com/posts', data)
+    .then(data => console.log(data))
+    .catch(err => console.log(err));
+```
+
+## Calling DELETE method:
+Deletes a resource by its corresponding url.
+```javascript 
+http.delete(url)
+```
+**URL:** 
+
+The resource to be called.
+
+**Data:**
+
+The data to be sent in JSON format.
+
+**Returns:** 
+
+It returs a promise object with *data* and *error* objects so you can call it asychronously. 
+
+* Data - the response data in JSON format. 
+* Error - any error message.
+
+ Example:
+
+```javascript
+ http.delete('https://jsonplaceholder.typicode.com/posts', data)
+    .then(data => console.log(data))
+    .catch(err => console.log(err));
+```
 
 
 
